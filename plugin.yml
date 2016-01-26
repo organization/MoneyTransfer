@@ -1,0 +1,34 @@
+﻿name: MoneyTransfer
+main: maru\MoneyTransfer
+author: maru
+version: "1.0"
+api:
+- 1.12.0
+- 1.13.0
+- 2.0.0
+
+commands:
+ 돈이동:
+  usage: /돈이동 <이동|서버목록>
+  description: 다른서버로 돈을 이동합니다.
+  permission: moneytransfer.cmd.*
+  children:
+   이동:
+   서버추가:
+   서버제거:
+   서버목록:
+  
+ 
+ 
+permissions:
+ moneytransfer.*:
+  default: true
+  children:
+   moneytransfer.cmd.*:
+    children:
+     moneytransfer.cmd.move:
+     moneytransfer.cmd.addserver:
+      default: OP
+     moneytransfer.cmd.deleteserver:
+      default: OP
+     moneytransfer.cmd.serverlist:
