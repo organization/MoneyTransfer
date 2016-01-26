@@ -138,10 +138,8 @@ class MoneyTransfer extends PluginBase implements Listener {
 		return true;
 	}
 	public function onDataPacketRecieve(CustomPacketReceiveEvent $event) {
-		$this->getLogger()->debug("데이터 패킷을 전달받음.");
 		$packet = $event->getPacket();
 		$array = json_decode($packet->data);
-		var_dump($array);
 		if ($array[0] != "MoneyTransfer") {
 			return;
 		}
